@@ -3,6 +3,8 @@
   <body>
     <div id="comments"> </div> 
         <script> 
+           console.log(document.referrer);
+           console.log(window.top);
            const url = new URL(document.referrer);
            path = url.pathname.replace(/[\W_]+/g,"")
            var script  = document.createElement("script");
