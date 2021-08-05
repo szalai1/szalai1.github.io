@@ -3,13 +3,12 @@
   <body>
     <div id="comments"> </div> 
         <script> 
-           const url = new URL(document.referrer);
-           path = url.pathname.replace(/[\W_]+/g,"")
+           path = decodeURI(window.parent.location.hash.substring(1)).replace(/[\W_]+/g,"-")
            var script  = document.createElement("script");
            script.src = "https://utteranc.es/client.js";
            args = {
              "repo": "szalai1/szalai1.github.io",
-            "issue-term": "page:"+path,
+            "issue-term": "comments:"+path,
             "label" : "utterance.es",
             "theme": "github-light",
             "crossorigin": "anonymus",
