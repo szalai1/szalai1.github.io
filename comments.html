@@ -3,8 +3,7 @@
   <body>
     <div id="comments"> </div> 
         <script> 
-           const url = new URL(window.parent.location.href);
-           path = url.pathname.replace(/[\W_]+/g,"")
+           path = window.parent.location.hash.replace(/[\W_]+/g,"")
            var script  = document.createElement("script");
            script.src = "https://utteranc.es/client.js";
            args = {
