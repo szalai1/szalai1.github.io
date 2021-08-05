@@ -1,12 +1,25 @@
+  
 <html>
   <body>
-    <script src="https://utteranc.es/client.js"
-        repo="szalai1/szalai1.github.io"
-        issue-term="pathname"
-        label="utterance.es"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
+    <div id="comments"> </div> 
+        <script> 
+           const url = new URL(document.referrer);
+           path = url.pathname.replace(/[\W_]+/g,"")
+           var script  = document.createElement("script");
+           script.src = "https://utteranc.es/client.js";
+           args = {
+             "repo": "szalai1/szalai1.github.io",
+            "issue-term": "page:"+path,
+            "label" : "utterance.es",
+            "theme": "github-light",
+            "crossorigin": "anonymus",
+            "async": true
+          }
+          for(const [k,v]  of Object.entries(args)){
+            script.setAttribute(k, v)  
+          }
+         document.getElementById("comments").appendChild(script)
+        </script>
     </script>
   </body>
 </html>
